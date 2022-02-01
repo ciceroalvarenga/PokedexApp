@@ -1,16 +1,22 @@
 import React from 'react';
-import {StatusBar, Text, View} from 'react-native';
+import {StatusBar} from 'react-native';
 import {ThemeProvider} from 'styled-components';
 
-import theme from './global/styles/theme';
+import {Home} from '@screens/Home';
+
+import theme from '@global/styles/theme';
+import {BackgroundTheme} from '@global/styles/background';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <StatusBar barStyle="light-content" backgroundColor="#121212" />
-      <View>
-        <Text>Hello World</Text>
-      </View>
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={theme.textColor.white}
+      />
+      <BackgroundTheme>
+        <Home />
+      </BackgroundTheme>
     </ThemeProvider>
   );
 }
