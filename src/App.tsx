@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar
-        barStyle="light-content"
+        barStyle="dark-content"
         backgroundColor={theme.textColor.white}
       />
       <BackgroundTheme>

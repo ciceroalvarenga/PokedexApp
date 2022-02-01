@@ -1,17 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {} from 'react-native';
 import Pokeball_header from '../../assets/Images/Pokeball_header.png';
-import {ImageBackground, Heading} from './styles';
+import {Container, ImageBackground, TitleHeading, TextHeading} from './styles';
 
 export function Home() {
   return (
-    <View>
-      <ImageBackground resizeMode="contain" source={Pokeball_header}>
-        <Heading>PokéDex</Heading>
-        <Text>
+    <ImageBackground resizeMode="contain" source={Pokeball_header}>
+      <Container>
+        <TitleHeading>PokéDex</TitleHeading>
+        <TextHeading>
           Procure o Pokémon pelo nome ou usando o número National Pokédex.
-        </Text>
-      </ImageBackground>
-    </View>
+        </TextHeading>
+      </Container>
+    </ImageBackground>
   );
 }
