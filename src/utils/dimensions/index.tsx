@@ -9,7 +9,7 @@ import {
  * @param dimension retirado diretamente de wireframes de design
  * @returns {string} porcentagem. ex: '25%'
  */
-export const wp = dimension => {
+export const wp = (dimension: any) => {
   return wp2dp((dimension / 360) * 100 + '%');
 };
 
@@ -19,6 +19,6 @@ export const wp = dimension => {
  * @param dimension retirado diretamente de wireframes de design
  * @returns {string} porcentagem. ex: '25%'
  */
-export const hp = dimension => {
+export const hp = (dimension: number) => {
   return hp2dp((dimension / 760) * 100 + '%');
 };
