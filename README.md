@@ -12,7 +12,7 @@ precisa de conexão com a Internet para funcionar.
 [TypesCript](https://www.typescriptlang.org/) |
 [Styled-Components](https://styled-components.com/) |
 [React Navigation](https://reactnavigation.org/) |
-[Redux Toolkit](https://redux-toolkit.js.org/) |
+[Redux Toolkit](https://redux-toolkit.js.org/)
 
 ## Adendos Importantes
 1. O layout citado foi apenas uma inspiração para criação do projeto.
