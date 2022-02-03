@@ -8,11 +8,11 @@ pesquisar seus pokemons favoritos. Uma interface moderna com um layout agradáve
 precisa de conexão com a Internet para funcionar.
 
 ## Tecnologias Usadas
-[React Native](https://reactnative.dev/)
-[TypesCript](https://www.typescriptlang.org/)
-[Styled-Components](https://styled-components.com/)
-[React Navigation](https://reactnavigation.org/)
-[Redux Toolkit](https://redux-toolkit.js.org/)
+[React Native](https://reactnative.dev/) |
+[TypesCript](https://www.typescriptlang.org/) |
+[Styled-Components](https://styled-components.com/) |
+[React Navigation](https://reactnavigation.org/) |
+[Redux Toolkit](https://redux-toolkit.js.org/) |
 
 ## Adendos Importantes
 1. O layout citado foi apenas uma inspiração para criação do projeto.
