@@ -1,7 +1,6 @@
 import {TypePokemon} from '@components/TypePokemon';
 import React from 'react';
-
-// import theme from '@global/styles/theme';
+import {TouchableOpacityProps} from 'react-native';
 
 import {
   Container,
@@ -13,7 +12,8 @@ import {
   ContainerType,
 } from './styles';
 
-type CardProps = {
+type CardProps = TouchableOpacityProps & {
+  idNumber: string;
   name: string;
   spriteUrl: string;
   types: [
@@ -25,11 +25,13 @@ type CardProps = {
   ];
 };
 
-export function Card({name, spriteUrl, types}: CardProps) {
+export function Card({name, spriteUrl, types, idNumber, ...rest}: CardProps) {
+  const numberPokemon = ('000' + idNumber).slice(-3);
+
   return (
-    <Container typePokemon={types[0].type.name}>
+    <Container {...rest} typePokemon={types[0].type.name}>
       <Content>
-        <NumberPokemon>#001</NumberPokemon>
+        <NumberPokemon>#{numberPokemon}</NumberPokemon>
         <NamePokemon>{name}</NamePokemon>
         <ContainerType>
           {types.map(type => (

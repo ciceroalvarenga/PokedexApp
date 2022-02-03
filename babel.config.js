@@ -22,7 +22,7 @@ module.exports = {
           '@components': './src/components',
           '@config': './src/config',
           '@screens': './src/screens',
-          '@redux': './src/redux',
+          '@store': './src/store',
           '@routes': './src/routes',
           '@services': './src/services',
           '@styles': './src/styles',

@@ -7,7 +7,7 @@ type GetPokemonsProps = {
   offset: any;
 };
 
-async function GetPokemons({offset}: GetPokemonsProps) {
+async function PokemonApiGet({offset}: GetPokemonsProps) {
   const params = {
     limit: 10,
     offset: offset,
@@ -27,7 +27,6 @@ async function GetPokemons({offset}: GetPokemonsProps) {
     const detailResponse = await api.get(`/pokemon/${result[i].id}`);
     const detail = detailResponse.data;
     result[i].types = detail.types;
-    result[i].abilities = detail.abilities;
     result[i].height = detail.height;
     result[i].weight = detail.weight;
     result[i].stats = detail.stats;
@@ -36,4 +35,4 @@ async function GetPokemons({offset}: GetPokemonsProps) {
   return result;
 }
 
-export default GetPokemons;
+export default PokemonApiGet;

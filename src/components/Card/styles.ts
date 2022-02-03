@@ -4,7 +4,7 @@ type ContainerProps = {
   typePokemon: string;
 };
 
-export const Container = styled.View<ContainerProps>`
+export const Container = styled.TouchableOpacity<ContainerProps>`
   flex-direction: row;
   justify-content: space-between;
   margin: 12px 0;

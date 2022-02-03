@@ -4,8 +4,6 @@ import {FlatList} from 'react-native';
 import {Card} from '@components/Card';
 import {Input} from '@components/Input';
 
-import GetPokemons from './pokemonServices';
-
 import theme from '@global/styles/theme';
 import {
   Container,
@@ -17,8 +15,11 @@ import {
 
 import Pokeball_header from '../../assets/Images/Pokeball_header.png';
 import {FooterList} from '@components/FooterList';
+import PokemonApiGet from '@services/PokemonServices';
+import {useDispatch} from 'react-redux';
+import {getPokemon} from '@store/pokemonSlice';
 
-type PropsPokemons = {
+export type PropsPokemons = {
   id: string;
   height: number;
   name: string;
@@ -31,9 +32,18 @@ type PropsPokemons = {
       };
     },
   ];
+  stats: [
+    {
+      base_stat: number;
+      stat: {
+        name: string;
+      };
+    },
+  ];
 };
 
-export function Home() {
+export function Home({navigation}: any) {
+  const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState<PropsPokemons[]>([]);
   const [loading, setLoading] = useState(false);
   const [offset, setOffset] = useState<number>(0);
@@ -47,10 +57,16 @@ export function Home() {
       return;
     }
     setLoading(true);
-    const response = await GetPokemons({offset});
+    const response = await PokemonApiGet({offset});
     setPokemons([...pokemons, ...response]);
     setOffset(offset + 10);
     setLoading(false);
+  }
+
+  function handleClickPokemom(item: PropsPokemons) {
+    const pokemonSelected: PropsPokemons = item;
+    dispatch(getPokemon(pokemonSelected));
+    navigation.navigate('AboutPokemons');
   }
 
   return (
@@ -59,10 +75,11 @@ export function Home() {
         <Container>
           <TitleHeading>PokéDex</TitleHeading>
           <TextHeading>
-            Procure o Pokémon pelo nome ou usando o número National Pokédex.
+            Search for Pokémon by name or using the National Pokédex number.
           </TextHeading>
           <Input
-            placeholder="Digite o nome do Pokémon!"
+            placeholder="What Pokémon are you looking for?
+            "
             placeholderTextColor={theme.textColor.grey}
           />
         </Container>
@@ -77,9 +94,11 @@ export function Home() {
             <>
               <Card
                 key={item.id}
+                idNumber={item.id}
                 name={item.name}
                 spriteUrl={item.spriteUrl}
                 types={item.types}
+                onPress={() => handleClickPokemom(item)}
               />
             </>
           )}

@@ -42,7 +42,7 @@
       "@components/*": ["components/*"],
       "@config": ["config"],
       "@screens/*": ["screens/*"],
-      "@redux/*": ["redux/*"],
+      "@store/*": ["store/*"],
       "@routes/*": ["routes/*"],
       "@services/*": ["services/*"],
       "@styles/*": ["styles/*"],
